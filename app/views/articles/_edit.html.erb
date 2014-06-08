@@ -1,0 +1,23 @@
+<p>
+<%=form_for @article do |f|%>
+<% if @article.errors.any? %>
+ <% @article.errors.full_messages.each do |msg| %>
+<s>Error</s> :
+<i><%= msg %></i><br />
+ <% end %>
+ <% end %>
+	
+	
+	<p>
+	<%= f.label :title%><br />
+	<%= f.text_field :title%>
+	</p>
+
+	<p>
+	<%= f.label :text%><br />
+	<%= f.text_area :text, class: "a_area"%>
+	</p>
+	<%= f.submit %>
+<%end%>
+</p>
+<%= link_to 'Back', articles_path %>
